@@ -37,8 +37,37 @@
             border-bottom: 2px solid #eef2f6;
             padding-bottom: 22px;
             margin-bottom: 28px;
+            gap: 20px;
         }
-        .header h1 {
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 8px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .logo-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(30, 58, 95, 0.1);
+        }
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .header-titles h1 {
             font-size: 28px;
             font-weight: 700;
             color: #0f172a;
@@ -46,23 +75,30 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-bottom: 4px;
         }
-        .header h1 span {
+        .header-titles h1 span {
             background: #1e3a5f;
             color: #fff;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             padding: 2px 14px;
             border-radius: 40px;
             letter-spacing: 0;
         }
+        .company-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
         .header .stats {
             font-size: 15px;
             color: #475569;
             background: #f1f5f9;
-            padding: 6px 18px;
+            padding: 8px 20px;
             border-radius: 40px;
-            font-weight: 500;
+            font-weight: 600;
+            white-space: nowrap;
         }
         /* ===== Search & Filters ===== */
         .search-section {
@@ -258,12 +294,23 @@
                 align-items: flex-start;
                 gap: 12px;
             }
-            .header h1 {
+            .header-brand {
+                width: 100%;
+                gap: 15px;
+            }
+            .logo-container {
+                width: 60px;
+                height: 60px;
+                border-radius: 12px;
+            }
+            .header-titles h1 {
                 font-size: 22px;
             }
             .header .stats {
                 font-size: 13px;
-                padding: 4px 14px;
+                padding: 6px 16px;
+                width: 100%;
+                text-align: center;
             }
             .search-box input {
                 padding: 12px 16px 12px 44px;
@@ -294,7 +341,7 @@
             .container {
                 padding: 12px 8px 20px;
             }
-            .header h1 {
+            .header-titles h1 {
                 font-size: 19px;
                 flex-wrap: wrap;
             }
@@ -368,10 +415,20 @@
     <div class="container" id="app">
         <!-- Header -->
         <div class="header">
-            <h1>
-                📋 دليل الأصناف
-                <span>بحث</span>
-            </h1>
+            <div class="header-brand">
+                <!-- تم إضافة اللوجو هنا - قم بتغيير مسار الصورة إلى المسار الصحيح -->
+                <div class="logo-container">
+                    <!-- استبدل logo.png بمسار اللوجو الخاص بك -->
+                    <img src="logo.png" alt="شعار الشركة" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><polygon points=\'50,5 95,30 95,70 50,95 5,70 5,30\' fill=\'%23d4a373\'/><polygon points=\'50,15 85,35 85,65 50,85 15,65 15,35\' fill=\'%23f8fafc\'/><text x=\'50\' y=\'55\' font-size=\'12\' text-anchor=\'middle\' fill=\'%231e3a5f\' font-family=\'sans-serif\' font-weight=\'bold\'>LOGO</text></svg>'">
+                </div>
+                <div class="header-titles">
+                    <h1>
+                        دليل الأصناف
+                        <span>بحث</span>
+                    </h1>
+                    <div class="company-subtitle">للحجر والرخام والديكورات</div>
+                </div>
+            </div>
             <div class="stats" id="statsDisplay">🔄 جار التحميل...</div>
         </div>
 
